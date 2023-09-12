@@ -1,7 +1,16 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Calendar
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    var year:Int = Calendar.getInstance().get(Calendar.YEAR)
+
+    val formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss.SSS")
+    println(year)
+
+    var today = LocalDateTime.now()
+
+    var formattedToday = today.format(formatter)
+    println(formattedToday)
 }
